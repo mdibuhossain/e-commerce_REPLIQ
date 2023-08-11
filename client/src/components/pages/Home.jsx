@@ -1,0 +1,80 @@
+import React from "react";
+import NavBar from "../shared/NavBar";
+
+const Home = () => {
+  return (
+    <div>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+      <h1>bal</h1>
+    </div>
+  );
+};
+
+export default Home;
