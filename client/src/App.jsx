@@ -7,6 +7,7 @@ import Products from "./components/pages/admin/products";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import NavBar from "./components/shared/NavBar";
+import Product from "./components/pages/Product";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="login" element={<Login />} />
         </Route>
         <Route path="/dashboard" element={<Layout pathname="/dashboard" />}>
