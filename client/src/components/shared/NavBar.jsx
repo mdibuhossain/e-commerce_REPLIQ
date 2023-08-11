@@ -1,11 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-xl">eCommerce</a>
+          <Link to="" className="btn btn-ghost normal-case text-xl">
+            eCommerce
+          </Link>
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end">
@@ -43,10 +45,15 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          <div className="dropdown dropdown-end">
+          <div>
+            <Link to="/login" className="btn btn-sm btn-success">
+              Login
+            </Link>
+          </div>
+          {/* <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                <img src="https://64.media.tumblr.com/0ebd9d306b212e7fe202fc150211c268/9ddee3b5d0fd062a-3b/s540x810/fd039b55b8cb1892ff3519fc8ed1e5d46b5670f3.png" />
               </div>
             </label>
             <ul
@@ -54,19 +61,15 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
+                <Link to="dashboard" className="justify-between">
+                  Dashboard
+                </Link>
               </li>
               <li>
                 <a>Logout</a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
       <Outlet />

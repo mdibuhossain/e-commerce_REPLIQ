@@ -14,15 +14,14 @@ const Product = () => {
   console.log(product);
   return (
     <div className="lg:w-9/12 p-5 m-auto">
-      <div className="flex w-full bg-white rounded-lg shadow-xl p-10 overflow-hidden flex-wrap">
+      <div className="grid xl:grid-cols-2 w-full bg-white rounded-lg shadow-xl p-10 overflow-hidden">
         <div className="max-w-[320px] overflow-hidden">
           <figure className="p-10">
             <img src={product?.image} alt={product?.title} />
           </figure>
         </div>
-        <div className="md:block hidden w-[5vw]" />
-        <div className="flex-grow">
-          <div className="w-full">
+        <div className="">
+          <div className="">
             <h1 className="md:text-2xl text-lg font-bold">{product?.title}</h1>
             <div className="badge badge-ghost">{product?.category}</div>
             <div className="flex items-center gap-1">
@@ -76,7 +75,7 @@ const Product = () => {
             </div>
             <button className="btn btn-success w-full">Add to cart</button>
           </div>
-          <div className="py-5 xl:w-[512px] text-justify">
+          <div className="py-5 text-justify">
             <p>{product?.description}</p>
           </div>
         </div>

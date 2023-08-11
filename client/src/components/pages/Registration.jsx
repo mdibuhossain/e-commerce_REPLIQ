@@ -1,6 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Registration = () => {
   return (
     <div className="lg:w-9/12 p-5 m-auto">
       <div className="flex justify-center items-center h-[75vh]">
@@ -24,17 +25,22 @@ const Login = () => {
             placeholder="Enter password"
             className="input input-bordered input-primary w-full max-w-xs"
           />
+          <input
+            type="password"
+            placeholder="Confirm password"
+            className="input input-bordered input-primary w-full max-w-xs"
+          />
           <p className="text-xs px-2">
-            Don't have an account?{" "}
-            <Link to="/registration" className="link-hover link-info">
-              Register
+            Already have an account?{" "}
+            <Link to="/login" className="link-hover link-info">
+              Login
             </Link>
           </p>
-          <button className="btn btn-info">Login</button>
+          <button className="btn btn-info">Sign up</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Registration;
