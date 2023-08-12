@@ -1,14 +1,20 @@
 [
     {
+        "name": "Ibrahim Hossain",
         "number": "+8801518455043",
+        "role": "admin",
         "password": "admin"
     },
     {
+        "name": "Akash Mahmud",
         "number": "+8801922222222",
+        "role": "regular",
         "password": "123123"
     },
     {
+        "name": "Abdul Al Mamun",
         "number": "+8801733355566",
+        "role": "regular",
         "password": "password"
     }
 ]

@@ -10,6 +10,7 @@ import NavBar from "./components/shared/NavBar";
 import Product from "./components/pages/Product";
 import Registration from "./components/pages/Registration";
 import CartView from "./components/pages/CartView";
+import AddProduct from "./components/pages/AddProduct";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="customers" element={<Customers />} />
           <Route path="orders" element={<Orders />} />
           <Route path="products" element={<Products />} />
+          <Route path="addproduct" element={<AddProduct />} />
         </Route>
       </Routes>
     </>
