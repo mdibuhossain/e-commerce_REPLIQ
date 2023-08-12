@@ -9,6 +9,7 @@ import Login from "./components/pages/Login";
 import NavBar from "./components/shared/NavBar";
 import Product from "./components/pages/Product";
 import Registration from "./components/pages/Registration";
+import CartView from "./components/pages/CartView";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />
-          <Route path="/product/:id" element={<Product />} />
+          <Route path="product/:id" element={<Product />} />
+          <Route path="cart" element={<CartView />} />
           <Route path="login" element={<Login />} />
           <Route path="registration" element={<Registration />} />
         </Route>

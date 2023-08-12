@@ -11,7 +11,6 @@ const Product = () => {
       setProduct(result?.data);
     });
   }, [id]);
-  console.log(product);
   return (
     <div className="lg:w-9/12 p-5 m-auto">
       <div className="grid xl:grid-cols-2 w-full bg-white rounded-lg shadow-xl p-10 overflow-hidden">
