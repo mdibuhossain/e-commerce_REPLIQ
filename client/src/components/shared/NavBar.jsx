@@ -30,8 +30,12 @@ const NavBar = () => {
     <>
       <div className={`navbar shadow-lg z-50 bg-base-100 ${stickyClass}`}>
         <div className="flex-1">
-          <Link to="" className="btn btn-ghost normal-case text-xl">
-            eCommerce
+          <Link
+            to=""
+            className="btn btn-ghost normal-case flex justify-center items-center text-xl"
+          >
+            <img className="w-[30px]" src="./fav.webp" alt="" />
+            <span>eCommerce</span>
           </Link>
         </div>
         <div className="flex-none">
