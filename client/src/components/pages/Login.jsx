@@ -3,8 +3,10 @@ import "react-phone-input-2/lib/style.css";
 import { Link, useNavigate } from "react-router-dom";
 import users from "../../assets/data/users.json";
 import axios from "axios";
+import useUtil from "../../hooks/useUtil";
 
 const Login = () => {
+  const { setLogin } = useUtil();
   const [number, setNumber] = React.useState("+880");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState(false);
@@ -25,7 +27,7 @@ const Login = () => {
       if (checkUser) {
         setSuccess(true);
         setError(false);
-        localStorage.setItem("isLogin", true);
+        setLogin();
         setTimeout(() => {
           navigate("/");
         }, 500);

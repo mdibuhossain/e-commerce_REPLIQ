@@ -11,26 +11,29 @@ import Product from "./components/pages/Product";
 import Registration from "./components/pages/Registration";
 import CartView from "./components/pages/CartView";
 import AddProduct from "./components/pages/AddProduct";
+import UtilityProvider from "./context/UtilityProvider";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<NavBar />}>
-          <Route index element={<Home />} />
-          <Route path="product/:id" element={<Product />} />
-          <Route path="cart" element={<CartView />} />
-          <Route path="login" element={<Login />} />
-          <Route path="registration" element={<Registration />} />
-        </Route>
-        <Route path="/dashboard" element={<Layout pathname="/dashboard" />}>
-          <Route index element={<Overview />} />
-          <Route path="customers" element={<Customers />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="products" element={<Products />} />
-          <Route path="addproduct" element={<AddProduct />} />
-        </Route>
-      </Routes>
+      <UtilityProvider>
+        <Routes>
+          <Route path="/" element={<NavBar />}>
+            <Route index element={<Home />} />
+            <Route path="product/:id" element={<Product />} />
+            <Route path="cart" element={<CartView />} />
+            <Route path="login" element={<Login />} />
+            <Route path="registration" element={<Registration />} />
+          </Route>
+          <Route path="/dashboard" element={<Layout pathname="/dashboard" />}>
+            <Route index element={<Overview />} />
+            <Route path="customers" element={<Customers />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="products" element={<Products />} />
+            <Route path="addproduct" element={<AddProduct />} />
+          </Route>
+        </Routes>
+      </UtilityProvider>
     </>
   );
 }

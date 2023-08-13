@@ -1,20 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import useUtil from "../../hooks/useUtil";
 
 const NavBar = () => {
-  const getCartDetailsCount = () => {
-    const data = JSON.parse(localStorage.getItem("cartDetails"));
-    if (data) {
-      return Object.keys(data).length;
-    } else {
-      return 0;
-    }
-  };
-  const [cartCountTop, setCartCountTop] = React.useState(getCartDetailsCount());
+  const { isLogin, setLogOut } = useUtil();
+  const { cartDetails } = useUtil();
   const [stickyClass, setStickyClass] = React.useState("relative");
-  const [isLogin, setIsLogin] = React.useState(
-    JSON.parse(localStorage.getItem("isLogin"))
-  );
 
   React.useEffect(() => {
     window.addEventListener("scroll", stickNavbar);
@@ -23,25 +14,8 @@ const NavBar = () => {
     };
   }, []);
 
-  React.useEffect(() => {
-    const updateDataFromLocalStorage = () => {
-      const storedData = JSON.parse(localStorage.getItem("isLogin"));
-      setIsLogin(storedData);
-      setCartCountTop(getCartDetailsCount());
-    };
-
-    updateDataFromLocalStorage();
-
-    window.addEventListener("storage", updateDataFromLocalStorage);
-
-    return () => {
-      window.removeEventListener("storage", updateDataFromLocalStorage);
-    };
-  }, []);
-
   const logOutHandler = () => {
-    localStorage.setItem("isLogin", false);
-    setIsLogin(false);
+    setLogOut();
   };
 
   const stickNavbar = () => {
@@ -79,7 +53,7 @@ const NavBar = () => {
                   />
                 </svg>
                 <span className="badge badge-sm indicator-item">
-                  {cartCountTop}
+                  {cartDetails ? Object.keys(cartDetails).length : 0}
                 </span>
               </div>
             </label>
@@ -88,9 +62,13 @@ const NavBar = () => {
               className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
             >
               <div className="card-body">
-                <span className="font-bold text-lg">{cartCountTop} Items</span>
+                <span className="font-bold text-lg">
+                  {cartDetails ? Object.keys(cartDetails).length : 0} Items
+                </span>
                 <div className="card-actions">
-                  <Link to="cart" className="btn btn-primary btn-block">View cart</Link>
+                  <Link to="cart" className="btn btn-primary btn-block">
+                    View cart
+                  </Link>
                 </div>
               </div>
             </div>

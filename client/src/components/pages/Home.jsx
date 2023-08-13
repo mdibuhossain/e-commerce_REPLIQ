@@ -2,35 +2,33 @@ import React from "react";
 import TopCarousel from "../TopCarousel";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import useUtil from "../../hooks/useUtil";
 
 const Home = () => {
-  const navigate = useNavigate();
+  const { cartDetails, setCartDetails, setDataToLocalStorage } = useUtil();
   const [products, setProducts] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-  const [cartCount, setCartCount] = React.useState(
-    JSON.parse(localStorage.getItem("cartDetails"))
-  );
+  const navigate = useNavigate();
 
   const addToCartHandler = (id) => {
-    const newCartCount = { ...cartCount };
+    const newCartCount = { ...cartDetails };
     newCartCount[id] = newCartCount[id] ? newCartCount[id] + 1 : 1;
-    setCartCount(newCartCount);
-    localStorage.setItem("cartDetails", JSON.stringify(newCartCount));
+    setCartDetails(newCartCount);
+    setDataToLocalStorage("cartDetails", newCartCount);
+  };
+
+  const navigateHandler = (id) => {
+    navigate(`product/${id}`);
   };
 
   React.useEffect(() => {
     setIsLoading(true);
-    const fetchData = () => {
-      axios
-        .get("https://fakestoreapi.com/products")
-        .then((result) => setProducts(result?.data));
+    axios.get("https://fakestoreapi.com/products").then((result) => {
+      setProducts(result?.data);
       setIsLoading(false);
-    };
-    return fetchData();
+    });
   }, []);
-  const navigateHandler = (id) => {
-    navigate(`product/${id}`);
-  };
+
   return (
     <div className="lg:w-9/12 p-5 m-auto">
       <TopCarousel />
